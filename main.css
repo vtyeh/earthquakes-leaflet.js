@@ -1,0 +1,7 @@
+html, body {
+	height: 100%;
+	background-image: url("earth.png");
+	background-size: cover;
+	background-repeat: no-repeat; 
+	background-position: center;
+}

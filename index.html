@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Earthquakes</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      html, body {
+  background: #333;
+  background-image: url("earth.png");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.svg-wrapper {
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: translateX(70%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #ffffcc;
+}
+
+.text a {
+  color: #fff;
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  letter-spacing: 11px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+  text-decoration: none;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="svg-wrapper">
+    <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="f2" x="0" y="0" width="150%" height="150%">
+          <feOffset result="offOut" in="SourceGraphic" dx="10" dy="10" />
+          <feGaussianBlur result="blutOut" in="offOut" stdDeviation="10" />
+          <feBlend in="SourceGraphic" in2 ="blurOut" mode="normal" />
+        </filter>
+      </defs>
+      <rect class="shape" height="60" width="320" filter="url(#f2)" />
+    </svg>
+    <div class="text"><a href="earthquake.html">EARTHQUAKES</a></div>
+  </div>
+  
+  
+
+</body>
+
+</html>

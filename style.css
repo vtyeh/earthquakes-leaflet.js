@@ -1,0 +1,55 @@
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+body,
+html {
+  height: 100%;
+  background-color: white;
+  background-image: url("earth.png");
+	background-size: cover;
+	background-repeat: no-repeat; 
+	background-position: center;
+  text-align: center;
+}
+
+#map {
+  height: 89%;
+  margin: 8px;
+}
+.legend {
+  line-height: 18px;
+  color: #555;
+  padding: 5px;
+  background-color: white
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.time-slider {
+  -webkit-appearance: none;
+  background-color: #4b5563;
+  opacity: 0.7;
+  height: 5px;
+  border-radius: 10px;
+}
+
+#navUArrow {
+  color: white;
+  padding: 5px;
+  margin-top:5px
+}
+
+#navDArrow {
+  color: white;
+  padding: 5px;
+  margin-bottom:5px
+}
