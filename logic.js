@@ -68,15 +68,15 @@ function createFeatures(earthquakeData, faultData) {
     weight: 2
   });
 
-  d3.json(earthquakeUrl, function(data) {
-    let timeline = L.timeline(data, {
+//   d3.json(earthquakeUrl, function(data) {
+    let timeline = L.timeline(earthquakeData, {
       getInterval: getInterval,
       pointToLayer: pointToLayer,
       onEachFeature: onEachFeature
     });
 
     createMap(earthquakes, faultlines, timeline);
-  });
+//   });
 
   // Sending our earthquakes layer to the createMap function
 }
