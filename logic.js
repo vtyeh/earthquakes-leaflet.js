@@ -147,4 +147,4 @@ function createMap(earthquakes, faultlines, timeline) {
   legend.addTo(myMap);
 }
 
-json_call();
+jsonCall();
