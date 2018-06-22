@@ -27,11 +27,11 @@ function color(magnitude) {
 d3.json(earthquakeUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
   d3.json(plateUrl, function(faultData) {
-    createFeatures(data.features, faultData.features);
+    createFeatures(data, data.features, faultData.features);
   });
 });
 
-function createFeatures(earthquakeData, faultData) {
+function createFeatures(timelineData, earthquakeData, faultData) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
   function pointToLayer(feature, latlng) {
@@ -68,15 +68,15 @@ function createFeatures(earthquakeData, faultData) {
     weight: 2
   });
 
-  d3.json(earthquakeUrl, function(data) {
-    let timeline = L.timeline(data, {
+//   d3.json(earthquakeUrl, function(data) {
+    let timeline = L.timeline(timelineData, {
       getInterval: getInterval,
       pointToLayer: pointToLayer,
       onEachFeature: onEachFeature
     });
 
     createMap(earthquakes, faultlines, timeline);
-  });
+//   });
 
   // Sending our earthquakes layer to the createMap function
 }
