@@ -23,15 +23,14 @@ function color(magnitude) {
             '#9F3';
 }
 
-function jsonCall() {
 // Perform a GET request to the query URL
-  d3.json(earthquakeUrl, function(data) {
-    // Once we get a response, send the data.features object to the createFeatures function
-    d3.json(plateUrl, function(faultData) {
-      createFeatures(data, data.features, faultData.features);
-    });
+d3.json(earthquakeUrl, function(data) {
+  // Once we get a response, send the data.features object to the createFeatures function
+  d3.json(plateUrl, function(faultData) {
+    createFeatures(data, data.features, faultData.features);
   });
-}
+});
+
 
 function createFeatures(timelineData, earthquakeData, faultData) {
   // Define a function we want to run once for each feature in the features array
@@ -146,5 +145,3 @@ function createMap(earthquakes, faultlines, timeline) {
   };
   legend.addTo(myMap);
 }
-
-jsonCall();
